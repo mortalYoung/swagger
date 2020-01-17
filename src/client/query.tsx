@@ -1,8 +1,8 @@
-import { Query } from "react-apollo";
+import { Query, QueryResult } from "react-apollo";
 import { gql } from 'apollo-boost';
 import * as React from 'react';
 class ExchangeRates extends React.Component {
-  render(){
+  render() {
     return <Query
       query={gql`
         {
@@ -14,7 +14,7 @@ class ExchangeRates extends React.Component {
       `}
     >
       {
-        ({loading, error, data }) => {
+        ({ loading, error, data }: QueryResult) => {
           if (loading) return <p>Loading...</p>;
           if (error) return <p>Error :(</p>;
 
