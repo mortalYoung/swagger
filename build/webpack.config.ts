@@ -38,7 +38,10 @@ const webpackConfig: webpack.Configuration = {
         options: {
           presets: ['@babel/preset-env', '@babel/preset-react'],
           babelrc: false,
-          plugins: ['react-hot-loader/babel', '@babel/plugin-syntax-dynamic-import']
+          plugins: [
+            'react-hot-loader/babel',
+            '@babel/plugin-syntax-dynamic-import'
+          ]
         }
       }, {
         loader: 'ts-loader',
@@ -61,7 +64,6 @@ const webpackConfig: webpack.Configuration = {
           loader: 'css-loader',
           options: {
             sourceMap: isDev ? true : false,
-            modules: true,
             importLoaders: 2
           }
         }, {

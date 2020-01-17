@@ -1,10 +1,12 @@
+import { hot } from 'react-hot-loader/root';
 import * as React from 'react';
 import './App.css';
+interface IAppProps { };
 
-interface IAppProps{};
-
-const App: React.SFC<IAppProps> = ({children}) => {
-	return <>{children}</>
+const App: React.SFC<IAppProps> = ({ children }) => {
+	return <>
+		{children}
+	</>
 }
 App.defaultProps = {};
-export default App;
+export default hot(App);

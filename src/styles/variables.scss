@@ -1,5 +1,6 @@
+@import '~antd/dist/antd.css';
 $blue:blue;
-@mixin ellipsis:{
+@mixin ellipsis{
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
