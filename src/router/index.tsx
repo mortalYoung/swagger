@@ -1,32 +1,11 @@
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import * as React from 'react';
-// import path from 'path';
 function Loading() {
     return <div>loading...</div>
 }
-
-// class LoadFactory {
-//     constructor(paths: string) {
-//         this.loadObject = this.load(paths);
-//     }
-//     loadObject: LoadableComponent;
-//     load = (pathUrl: string): LoadableComponent => {
-//         return Loadable({
-//             loader: () => import(path.join(__dirname, pathUrl)),
-//             loading: Loading
-//         })
-//     }
-//     getObject = (): LoadableComponent => {
-//         return this.loadObject
-//     }
-// }
-// const Test = load('../pages/test');
-// const Home = load('../pages/home');
-// const Test = new LoadFactory('../pages/test').getObject();
-// const Home = new LoadFactory('../pages/home').getObject();
-const Test = Loadable({
-    loader: () => import('../pages/test'),
+const List = Loadable({
+    loader: () => import('../pages/list'),
     loading: Loading
 })
 const Home = Loadable({
@@ -39,7 +18,7 @@ const Router = () => {
             <HashRouter>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/test" component={Test} />
+                    <Route exact path="/list" component={List} />
                 </Switch>
             </HashRouter>
         </>
