@@ -1,9 +1,15 @@
-an easy react+antd+typescript project;
+## introducation
+this project is for ones who just use React for a while and dont really familiar with react.
 
-achieve function list:
-1.CRUD for simple data;
-2.menu;
+this project is a very simple project that anyone can understand code in a minute,so it's just for practice;
+## technique
+here is some techniques i use in this project;
+- [react](https://reactjs.org/ "react")
+- [react-router](https://github.com/ReactTraining/react-router "react-router")
+- [ant design](https://ant.design/ "ant design")
+- [webpack](https://www.webpackjs.com/ "webpack")
+- [typescript](http://www.typescriptlang.org/ "typescript")
 
-this is a meaningless project.
-Just for practice and be familiar with react16 and antd4.
-So there are lots of bugs needed to fixed;
+## function
+- CRUD
+- menu
