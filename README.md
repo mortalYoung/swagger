@@ -10,8 +10,10 @@ here is some techniques i use in this project;
 - [webpack](https://www.webpackjs.com/ "webpack")
 - [typescript](http://www.typescriptlang.org/ "typescript")
 - [echarts](https://www.echartsjs.com/zh/index.html "echarts")
+- [redux](https://www.redux.org.cn/ "redux")
 
 ## function
 - CRUD
 - menu
-- (different from master)echarts
+- echarts
+- redux
