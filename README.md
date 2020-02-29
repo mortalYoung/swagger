@@ -1,4 +1,4 @@
-##introducation
+## introducation
 this project is for ones who just use React for a while and dont really familiar with react.
 
 this project is a very simple project that anyone can understand code in a minute,so it's just for practice;
@@ -10,6 +10,6 @@ here is some techniques i use in this project;
 - [webpack](https://www.webpackjs.com/ "webpack")
 - [typescript](http://www.typescriptlang.org/ "typescript")
 
-##function
+## function
 - CRUD
 - menu
