@@ -9,7 +9,9 @@ here is some techniques i use in this project;
 - [ant design](https://ant.design/ "ant design")
 - [webpack](https://www.webpackjs.com/ "webpack")
 - [typescript](http://www.typescriptlang.org/ "typescript")
+- [echarts](https://www.echartsjs.com/zh/index.html "echarts")
 
 ## function
 - CRUD
 - menu
+- (different from master)echarts
