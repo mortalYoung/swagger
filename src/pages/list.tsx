@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Card, Breadcrumb, Button, Table, Divider, Modal } from 'antd';
 import { NavLink } from 'react-router-dom';
 import Add from './Add';
+import Person from './person';
 const { confirm } = Modal;
 export interface dateSourceI {
     key: string,
@@ -10,11 +11,16 @@ export interface dateSourceI {
     address: string
 }
 class Test extends React.PureComponent {
+    personRef: React.RefObject<any> = React.createRef();
     state = {
         columns: [{
             title: 'Name',
-            dataIndex: 'name',
             key: 'name',
+            render: (record: dateSourceI) => {
+                return <span>
+                    <a onClick={() => this.handleCheckPerson(record)}>{record.name}</a>
+                </span>
+            }
         }, {
             title: 'Age',
             dataIndex: 'age',
@@ -119,6 +125,9 @@ class Test extends React.PureComponent {
             },
         });
     }
+    handleCheckPerson = (record: dateSourceI) => {
+        this.personRef.current.handleOk(record);
+    }
     handleEditData = (record: dateSourceI) => {
         this.setState({
             edit: true,
@@ -160,6 +169,7 @@ class Test extends React.PureComponent {
                         handleOk={this.handleAddData}
                         handleClose={() => this.toggleVisible(false)} />
                 </Card>
+                <Person ref={this.personRef} />
             </>
         )
     }

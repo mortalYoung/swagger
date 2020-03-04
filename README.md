@@ -17,3 +17,4 @@ here is some techniques i use in this project;
 - menu
 - echarts
 - redux
+- react-hook
