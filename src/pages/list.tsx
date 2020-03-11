@@ -2,13 +2,19 @@ import * as React from 'react';
 import { Card, Breadcrumb, Button, Table, Divider, Modal } from 'antd';
 import { NavLink } from 'react-router-dom';
 import Add from './Add';
-import Person from './person';
+// import Person from './person';
+import EnhancePerson from './enhancePerson';
 const { confirm } = Modal;
 export interface dateSourceI {
     key: string,
     name: string,
     age: number,
     address: string
+}
+export interface IMore {
+    java: Boolean
+    php: Boolean
+    javasciprt: Boolean
 }
 class Test extends React.PureComponent {
     personRef: React.RefObject<any> = React.createRef();
@@ -64,6 +70,16 @@ class Test extends React.PureComponent {
             name: '',
             age: 0,
             address: '',
+        },
+        checkVisible: false,
+        checkUser: {
+            key: '',
+            name: '',
+            age: 0,
+            address: '',
+            java: false,
+            javasciprt: false,
+            php: false,
         }
     }
     handleAddData = (data: dateSourceI) => {
@@ -126,7 +142,17 @@ class Test extends React.PureComponent {
         });
     }
     handleCheckPerson = (record: dateSourceI) => {
-        this.personRef.current.handleOk(record);
+        // this.personRef.current.handleOk(record);
+        //mock数据
+        const res: IMore = {
+            java: parseInt(record.key) % 2 === 0,
+            javasciprt: parseInt(record.key) % 2 === 0,
+            php: parseInt(record.key) % 2 != 0,
+        }
+        this.setState({
+            checkUser: Object.assign({}, res, record),
+            checkVisible: true
+        })
     }
     handleEditData = (record: dateSourceI) => {
         this.setState({
@@ -149,7 +175,7 @@ class Test extends React.PureComponent {
         )
     }
     render() {
-        const { columns, dataSource, visible, edit, editData } = this.state;
+        const { columns, dataSource, visible, edit, editData, checkVisible, checkUser } = this.state;
         return (
             <>
                 <Card
@@ -169,7 +195,13 @@ class Test extends React.PureComponent {
                         handleOk={this.handleAddData}
                         handleClose={() => this.toggleVisible(false)} />
                 </Card>
-                <Person ref={this.personRef} />
+                {/* <Person ref={this.personRef} /> */}
+                <EnhancePerson modalSetting={{
+                    visible: checkVisible,
+                    title: checkUser.name,
+                    onOk: () => { this.setState({ checkVisible: false }) },
+                    onCancel: () => { this.setState({ checkVisible: false }) },
+                }} user={checkUser} />
             </>
         )
     }
